@@ -32,8 +32,8 @@ cd vid2kg-final
 Create and activate a virtual environment:
 
 python3 -m venv venv
-source venv/bin/activate  # On macOS/Linux
-venv\Scripts\activate     # On Windows
+source venv/bin/activate  On macOS/Linux
+venv\Scripts\activate     On Windows
 
 Install required packages:
 
@@ -90,27 +90,27 @@ Available Command-Line Arguments:
 Help
 Common issues and solutions:
 YouTube download fails:
-# Update yt-dlp to latest version
+Update yt-dlp to latest version
 pip install --upgrade yt-dlp
 
-# Note: YouTube blocks yt-dlp from AWS/cloud environments - run locally
+Note: YouTube blocks yt-dlp from AWS/cloud environments - run locally
 Whisper model not found:
-# Manually download the model
+Manually download the model
 python -c "from faster_whisper import WhisperModel; WhisperModel('small')"
 Gemini API rate limit (429 error):
-# Wait 60 seconds and retry
-# Check quota at https://makersuite.google.com
-# Process videos sequentially, not in parallel
+Wait 60 seconds and retry
+Check quota at https://makersuite.google.com
+Process videos sequentially, not in parallel
 Out of memory error:
-# Use smaller model
+Use smaller model
 python -m vid2kg.cli --url "URL" --out data/output --model tiny
 
-# Or close other applications to free up RAM
+Or close other applications to free up RAM
 Poor transcription quality:
-# Try larger model for better accuracy
+Try larger model for better accuracy
 python -m vid2kg.cli --url "URL" --out data/output --model medium
 
-# Use --verbose flag to inspect raw transcription
+Use --verbose flag to inspect raw transcription
 python -m vid2kg.cli --url "URL" --out data/output --verbose
 Authors
 Aryan Verma - @aryanv-1105
